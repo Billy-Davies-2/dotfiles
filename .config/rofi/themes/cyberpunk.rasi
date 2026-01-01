@@ -1,0 +1,192 @@
+/**
+ * Squared Cyberpunk - Japanese Neon Edition
+ * Merged adi1090x + Your Cyberpunk Stack
+ **/
+
+configuration {
+    modi: "drun,run,filebrowser,window";
+    show-icons: true;
+    icon-theme: "Candy";  /* Your neon Candy icons */
+    display-drun: "";
+    display-run: "󰕈";
+    display-filebrowser: "";
+    display-window: "󰖟";
+    drun-display-format: "{name}";
+    window-format: "{w} · {c} · {t}";
+    font: "Berkeley Mono Variable 12";
+}
+
+/*****----- Global Cyberpunk Colors -----*****/
+* {
+    background:         rgba(10, 10, 30, 0.95);
+    background-alt:     rgba(20, 20, 40, 0.8);
+    foreground:         #00ffff;
+    selected:           rgba(255, 0, 255, 0.5);
+    active:             #00ffff;
+    urgent:             #ff5555;
+}
+
+/*****----- Main Window - Centered -----*****/
+window {
+    transparency:       "real";
+    location:           center;
+    anchor:             center;
+    fullscreen:         false;
+    width:              1200px;
+    border-radius:      15px;
+    border:             3px;
+    border-color:       #ff00ff;
+    background-color:   @background;
+}
+
+/*****----- Main Box -----*****/
+mainbox {
+    spacing:            0px;
+    background-color:   transparent;
+    orientation:        vertical;
+    children:           [ "inputbar", "listbox" ];
+}
+
+listbox {
+    spacing:            10px;
+    padding:            10px;
+    background-color:   transparent;
+    orientation:        vertical;
+    children:           [ "message", "listview", "mode-switcher" ];
+}
+
+/*****----- Inputbar - Japanese Cyber Prompt -----*****/
+inputbar {
+    spacing:            0px;
+    padding:            100px 40px;
+    background-color:   transparent;
+    background-image:   url("~/.config/rofi/images/cyberpunk-bg.jpg", width);
+    text-color:         @foreground;
+    orientation:        horizontal;
+    children:           [ "textbox-prompt-colon", "entry" ];
+}
+
+textbox-prompt-colon {
+    str:                "サイバー";
+    padding:            12px 16px;
+    border:             0px 3px 3px 3px;
+    border-radius:      0px;
+    border-color:       #ff00ff;
+    background-color:   @background-alt;
+    text-color:         #ff00ff;
+}
+
+entry {
+    expand:             true;
+    padding:            12px 16px;
+    border:             3px 3px 0px 0px;
+    border-radius:      0px;
+    border-color:       #ff00ff;
+    background-color:   @background-alt;
+    text-color:         @foreground;
+    cursor:             text;
+    placeholder:        "Search the Grid...";
+    placeholder-color:  rgba(0, 255, 255, 0.7);
+}
+
+/*****----- Mode Switcher -----*****/
+mode-switcher {
+    spacing:            10px;
+    background-color:   transparent;
+    text-color:         @foreground;
+}
+
+button {
+    padding:            10px 16px;
+    border-radius:      10px;
+    background-color:   @background-alt;
+    text-color:         @foreground;
+    border:             2px;
+    border-color:       rgba(255, 0, 255, 0.3);
+}
+
+button selected {
+    background-color:   @selected;
+    text-color:         #000000;
+    border-color:       #00ffff;
+}
+
+/*****----- Listview -----*****/
+listview {
+    columns:            1;
+    lines:              10;
+    cycle:              true;
+    dynamic:            true;
+    scrollbar:          false;
+    layout:             vertical;
+    reverse:            false;
+    fixed-height:       true;
+    fixed-columns:      true;
+    spacing:            8px;
+    background-color:   transparent;
+    text-color:         @foreground;
+}
+
+/*****----- Elements -----*****/
+element {
+    spacing:            12px;
+    padding:            12px 16px;
+    border-radius:      12px;
+    background-color:   transparent;
+    text-color:         @foreground;
+    border:             2px;
+    border-color:       transparent;
+}
+
+element normal.urgent {
+    border-color:       @urgent;
+}
+
+element normal.active {
+    border-color:       @active;
+}
+
+element selected.normal {
+    background-color:   @selected;
+    text-color:         #000000;
+    border-color:       #00ffff;
+}
+
+element selected.urgent {
+    background-color:   rgba(255, 85, 85, 0.7);
+    text-color:         #000000;
+}
+
+element selected.active {
+    background-color:   rgba(0, 255, 255, 0.6);
+    text-color:         #000000;
+}
+
+element-icon {
+    size:               48px;
+}
+
+element-text {
+    text-color:         inherit;
+    vertical-align:     0.5;
+    horizontal-align:   0.0;
+}
+
+/*****----- Message -----*****/
+message {
+    background-color:   transparent;
+}
+
+textbox {
+    padding:            12px 16px;
+    border-radius:      12px;
+    background-color:   @background-alt;
+    text-color:         @foreground;
+}
+
+error-message {
+    padding:            12px 16px;
+    border-radius:      12px;
+    background-color:   rgba(255, 85, 85, 0.3);
+    text-color:         @foreground;
+}

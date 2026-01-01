@@ -1,0 +1,98 @@
+* {
+  font-family: "Berkeley Mono Variable", "JetBrainsMono Nerd Font", "Font Awesome 6 Free";
+  font-size: 14px;
+  color: #00ffff;
+  font-weight: bold;
+  text-shadow: 0 0 8px #00ffff, 0 0 4px #ff00ff;
+  transition: all 0.3s ease;
+}
+
+window#waybar {
+  background-color: rgba(10, 10, 30, 0.88);
+  border-bottom: 4px solid #ff00ff;
+  box-shadow: 0 8px 20px rgba(255, 0, 255, 0.4);
+}
+
+#workspaces button {
+  padding: 5px 12px;
+  margin: 4px 2px;
+  border-radius: 12px;
+  background: linear-gradient(45deg, rgba(255,0,255,0.1), rgba(0,255,255,0.1));
+  color: #ff00ff;
+}
+
+#workspaces button.focused {
+  background: linear-gradient(45deg, #ff00ff, #00ffff);
+  color: #0a0a1f;
+  box-shadow: 0 0 15px #ff00ff;
+}
+
+#clock, #network, #pulseaudio, #tray, #custom-sep {
+  padding: 6px 12px;
+  margin: 4px 6px;
+  border-radius: 15px;
+  background: linear-gradient(135deg, rgba(20,20,40,0.8), rgba(15,15,45,0.8));
+  box-shadow: 0 0 12px #ff00ff44, inset 0 0 8px #00ffff22;
+}
+
+#clock:hover, #network:hover, #pulseaudio:hover {
+  box-shadow: 0 0 25px #00ffff, 0 0 15px #ff00ff;
+  background: linear-gradient(135deg, rgba(30,30,60,0.9), rgba(20,20,50,0.9));
+}
+
+/* Big glitching logo */
+#custom-logo {
+  font-size: 20px;
+  color: #ff00ff;
+  padding: 6px 25px;
+  animation: glitch 5s infinite alternate;
+  letter-spacing: 2px;
+}
+
+/* Flickering power button */
+#custom-power {
+  color: #ff5555;
+  padding: 6px 15px;
+  animation: flicker 3s infinite;
+}
+
+#custom-power:hover {
+  color: #ff0000;
+  box-shadow: 0 0 20px #ff0000;
+}
+
+/* Glitch effect for the logo */
+@keyframes glitch {
+  0% {
+    text-shadow: 0 0 10px #ff00ff;
+  }
+  50% {
+    text-shadow: 2px 2px 10px #00ffff, -2px -2px 10px #ff00ff;
+  }
+  100% {
+    text-shadow: 0 0 10px #ff00ff;
+  }
+}
+
+/* Flicker effect for power button */
+@keyframes flicker {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Tray styling */
+#tray > .passive {
+  -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+  -gtk-icon-effect: highlight;
+  background-color: #ff00ff;
+}

@@ -1,0 +1,67 @@
+configuration {
+    modi: "drun,run";
+    show-icons: true;
+    display-drun: "Apps:";
+    display-run: "Run:";
+    icon-theme: "candy-icons";
+    font: "Berkeley Mono Variable 14";
+    drun-display-format: "{name}";
+    drun-match-fields: "name,generic,exec,categories";
+    disable-history: false;
+    // Filter out Steam
+    application-filter: "!(steam|Steam)";
+}
+
+* {
+    background-color: #0a0a1f;
+    text-color: #00ffff;
+    border-color: #ff00ff;
+    icon-size: 48px;
+}
+
+window {
+    transparency: "real";
+    background-color: rgba(10, 10, 30, 0.95);
+    border: 3px;
+    border-color: #ff00ff;
+    border-radius: 15px;
+    width: 600px;
+}
+
+mainbox {
+    padding: 20px;
+}
+
+inputbar {
+    background-color: rgba(20, 20, 40, 0.8);
+    text-color: #00ffff;
+    padding: 12px;
+    border: 2px;
+    border-color: #ff00ff;
+    border-radius: 12px;
+}
+
+listview {
+    lines: 10;
+    columns: 1;
+    fixed-height: false;
+}
+
+entry {
+    padding: 12px;
+    background-color: transparent;
+}
+
+element {
+    padding: 12px;
+    border-radius: 12px;
+}
+
+element selected {
+    background-color: rgba(255, 0, 255, 0.4);
+    text-color: #000000;
+}
+
+element alternate selected {
+    background-color: rgba(0, 255, 255, 0.4);
+}

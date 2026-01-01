@@ -1,0 +1,60 @@
+// -*- mode: jsonc -*-
+{
+  "layer": "top",
+  "position": "top",
+  "modules-left": [
+    "hyprland/workspaces",
+    "custom/sep",
+    "clock"
+  ],
+  "modules-center": [
+    "custom/logo"
+  ],
+  "modules-right": [
+    "pulseaudio",
+    "network",
+    "tray",
+    "custom/power"
+  ],
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "format-icons": {
+      "1": "󰖟",
+      "2": "󰖟",
+      "3": "󰖟",
+      "4": "󰖟",
+      "5": "󰖟",
+      "6": "󰖟",
+      "7": "󰖟",
+      "8": "󰖟",
+      "9": "󰖟",
+      "10": "󰖟"
+    }
+  },
+  "custom/sep": {
+    "format": "",
+    "tooltip": false
+  },
+  "clock": {
+    "format": "󰥔 {:%H:%M}",
+    "tooltip-format": "<span color='#ff00ff'>󰃰</span> {:%A, %B %d %Y}\n<span color='#00ffff'>{:%H:%M:%S}</span>"
+  },
+  "custom/logo": {
+    "format": "サイバーランド CYBERLAND",
+    "tooltip": false
+  },
+  "custom/power": {
+    "format": "",
+    "on-click": "wlogout",
+    "tooltip": "<span color='#ff5555'>Shutdown</span>"
+  },
+  "pulseaudio": {
+    "format": " {volume}%",
+    "on-click": "pavucontrol-qt"
+  },
+  "network": {
+    "format-wifi": " {essid}",
+    "format-ethernet": " {ipaddr}",
+    "tooltip": true
+  }
+}
