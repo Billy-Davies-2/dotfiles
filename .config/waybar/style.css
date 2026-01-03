@@ -21,6 +21,13 @@ window#waybar {
   color: #ff00ff;
 }
 
+#workspaces button:hover {
+  border-radius: 15px;  /* Enhanced rounded edges on hover */
+  background: linear-gradient(45deg, rgba(255,0,255,0.3), rgba(0,255,255,0.3));
+  box-shadow: 0 0 15px rgba(255, 0, 255, 0.5);
+  transform: scale(1.08);  /* Slight scale up */
+}
+
 #workspaces button.focused {
   background: linear-gradient(45deg, #ff00ff, #00ffff);
   color: #0a0a1f;
@@ -36,8 +43,10 @@ window#waybar {
 }
 
 #clock:hover, #network:hover, #pulseaudio:hover {
+  border-radius: 18px;  /* Enhanced rounded edges on hover */
   box-shadow: 0 0 25px #00ffff, 0 0 15px #ff00ff;
   background: linear-gradient(135deg, rgba(30,30,60,0.9), rgba(20,20,50,0.9));
+  transform: scale(1.05);  /* Slight scale up to emphasize rounded shape */
 }
 
 /* Big glitching logo */
@@ -45,20 +54,31 @@ window#waybar {
   font-size: 20px;
   color: #ff00ff;
   padding: 6px 25px;
+  border-radius: 15px;  /* Add border radius for consistency */
   animation: glitch 5s infinite alternate;
   letter-spacing: 2px;
+}
+
+#custom-logo:hover {
+  border-radius: 18px;  /* Enhanced rounded edges on hover */
+  background: linear-gradient(135deg, rgba(30,30,60,0.5), rgba(20,20,50,0.5));
+  box-shadow: 0 0 20px #ff00ff;
+  transform: scale(1.02);  /* Subtle scale up */
 }
 
 /* Flickering power button */
 #custom-power {
   color: #ff5555;
   padding: 6px 15px;
+  border-radius: 15px;  /* Add border radius for consistency */
   animation: flicker 3s infinite;
 }
 
 #custom-power:hover {
   color: #ff0000;
+  border-radius: 18px;  /* Enhanced rounded edges on hover */
   box-shadow: 0 0 20px #ff0000;
+  transform: scale(1.05);  /* Slight scale up to emphasize rounded shape */
 }
 
 /* Glitch effect for the logo */
@@ -88,6 +108,17 @@ window#waybar {
 }
 
 /* Tray styling */
+#tray {
+  border-radius: 15px;  /* Ensure tray has rounded edges */
+}
+
+#tray:hover {
+  border-radius: 18px;  /* Enhanced rounded edges on hover */
+  box-shadow: 0 0 20px #00ffff, 0 0 10px #ff00ff;
+  background: linear-gradient(135deg, rgba(30,30,60,0.9), rgba(20,20,50,0.9));
+  transform: scale(1.05);  /* Slight scale up */
+}
+
 #tray > .passive {
   -gtk-icon-effect: dim;
 }
