@@ -2,7 +2,6 @@ precision mediump float;
 
 varying vec2 v_texcoord;
 uniform sampler2D tex;
-uniform float time;
 
 void main() {
     vec2 coord = v_texcoord - 0.5;
@@ -22,7 +21,8 @@ void main() {
     col *= vignette * 1.08;  // Slightly brighter center
 
     // Subtle horizontal scanlines for CRT monitor effect
-    float scanline = sin(v_texcoord.y * 1080.0) * 0.015;
+    // Using texture coordinate scaled by high value for resolution independence
+    float scanline = sin(v_texcoord.y * 800.0) * 0.015;
     col -= scanline;
 
     // Enhanced static noise/grain for digital interference
